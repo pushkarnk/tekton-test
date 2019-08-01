@@ -1,0 +1,14 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: test2
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: dev.local/test2
+            imagePullPolicy: Never
+            ports:
+            - containerPort: 3000
